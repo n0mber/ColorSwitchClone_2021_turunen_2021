@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
 
     private Rigidbody2D myRigidbody2D;
-    private float jumpForce = 200f;
+    private float jumpForce = 200f; //Force for the jump
 
 
     private void Start()
@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
    
     private void Update()
     {
+        //make PlayerDot jump when Left Mouse Button is down
+
         if (Input.GetMouseButtonDown (0))
         {
             myRigidbody2D.AddForce(Vector2.up * jumpForce);

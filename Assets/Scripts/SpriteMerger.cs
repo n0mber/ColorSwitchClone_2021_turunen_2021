@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//not in use - rotation works without merging
 public class SpriteMerger : MonoBehaviour
 {
     public Transform Purple;
