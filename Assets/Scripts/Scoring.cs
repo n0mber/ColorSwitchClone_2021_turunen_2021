@@ -2,27 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Scoring : MonoBehaviour
 {
     //collect WhiteStars and change score
 
     public GameObject scoreText;
-    public int theScore;
-    public AudioSource collectSound;
+    public static int theScore;
 
-    void OnTriggerEnter2D (Collider2D other)
+    private void Awake()
     {
-        //change score by one
-        theScore ++;
+        theScore = 0;
+    }
 
+    void Update()
+    {
         //set new score to UI
-        scoreText.GetComponent<Text>().text = theScore.ToString();
-
-        //once collected, play sound and destroy object
-        collectSound.Play();
-        Destroy(gameObject);
-
+        scoreText.GetComponent<TextMeshProUGUI>().text = "" + theScore;
     }
 
 

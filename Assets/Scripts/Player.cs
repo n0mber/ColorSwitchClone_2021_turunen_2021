@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
 
     private Rigidbody2D myRigidbody2D;
-    private float jumpForce = 200f; //Force for the jump
+    private float jumpForce = 150f; //Force for the jump
 
 
     private void Start()
@@ -25,5 +25,10 @@ public class Player : MonoBehaviour
             myRigidbody2D.AddForce(Vector2.up * jumpForce);
 
         }
+    }
+
+    void OnDestroy()
+    {
+        transform.parent.gameObject.AddComponent<GameOverScript>();
     }
 }
