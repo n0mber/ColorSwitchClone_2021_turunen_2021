@@ -1,12 +1,15 @@
 # ColorSwitchClone_2021_turunen_2021
 
 Current implementation:
+
+- Final game scene can be found in **Asset/Scenes/ColorSwitchCloneGAME**
+- All scripts are at **Asset/Scripts/***
 - first I made collision with physics ignore by detecting sprite renderer's material color. However, with I wasn't able to destroy object when condition false. 
-Therefore, I changed obstacles to be trigger and detecting same color by obstacles tag.
+Therefore, I changed obstacles to be trigger and detecting same color by obstacles tag. **See scripts ColorChange and GameOverCollision**
 - I slowed down camera, so that the jumping movement could be seen better - however, if the player advances fast, the ball could run out of the screen. 
-This doesn't show however, because of the obstacles
-- I wanted to make also obstacles that does other movement than rotate. I made this by creating points and the obstacle transforms its position towards those points
-- I made also a finish line, so the player gets final score and restart the game
+This doesn't show however, because of the obstacles. **See scripts CameraFollow and Player**
+- I wanted to make also obstacles that does other movement than rotate. I made this by creating points and the obstacle transforms its position towards those points.** See scripts MovementPoints and CircularMovement**
+- I made also a finish line, so the player gets final score and restart the game. **See scripts Scoring, CollectStar, EndGame and GameOverScript**
 
 Bugs/issues:
 - there is a issue with camera rendering when setting Game over screen active
