@@ -9,7 +9,7 @@ public class CircularMovement : MonoBehaviour
 
      void Update()
     {
-        //set rotate
+        //set rotate speed 
         transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
     }
 

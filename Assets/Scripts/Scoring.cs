@@ -13,7 +13,7 @@ public class Scoring : MonoBehaviour
 
     void Awake()
     {
-        theScore = 0;
+        theScore = 0; //score at the beginning of the game
     }
 
     void Update()
