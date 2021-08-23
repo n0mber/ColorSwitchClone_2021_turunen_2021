@@ -14,6 +14,7 @@ This doesn't show however, because of the obstacles. **See scripts CameraFollow 
 Bugs/issues:
 - there is a issue with camera rendering when setting Game over screen active
 - the random functionality may give same color - the code to ignore same color, doesn't function
+- I couldn't get the particle system working so that the instantiation happens ontriggerenter2D, therefore the particle system isn't unfortunately included in my submission
 
 
 Possible additional features:
