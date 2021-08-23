@@ -11,7 +11,7 @@ public class Scoring : MonoBehaviour
     public GameObject scoreText;
     public static int theScore;
 
-    private void Awake()
+    void Awake()
     {
         theScore = 0;
     }

@@ -8,15 +8,14 @@ public class ColorChange : MonoBehaviour
 
     public GameObject playerDot;
     public Renderer rend;
+    public string currentColor;
+    public int currentIndex = 5;
 
-    //colors for PlayerDot
-    public Color red = Color.red;
-    public Color green = Color.green;
-    public Color blue = Color.blue;
-    public Color magenta = Color.magenta;
 
-    //List of colors
-    public List<Color> colorList = new List<Color> {Color.red, Color.green, Color.blue, Color.magenta};
+    public List<Color> colorList = new List<Color> { new Color(184f/255f, 0f/255f, 228f/255f),
+                                                     new Color(41f/255f, 222f/255f, 0f/255f),
+                                                     new Color(0f/255f, 101f/255f, 255f/255f),
+                                                     new Color(255f/255f, 62f/255f, 57f/255f) };
 
     void Start()
     {
@@ -26,10 +25,42 @@ public class ColorChange : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         //Choose random color from colorList to be set as PlayerDot's color
+        
         int itemIndex = Random.Range(0, 4);
+
+        while (itemIndex == currentIndex)
+        {
+            itemIndex = Random.Range(0, 4);
+        }
+
         rend.material.color = colorList[itemIndex];
 
-        //Destroy after collision
+        if (itemIndex == 0)
+        {
+            currentColor = "Magenta";
+            currentIndex = itemIndex;
+        }
+
+        if (itemIndex == 1)
+        { 
+            currentColor = "Green";
+            currentIndex = itemIndex;
+        }
+
+        if (itemIndex == 2)
+        { 
+            currentColor = "Blue";
+            currentIndex = itemIndex;
+        }
+
+        if (itemIndex == 3)
+        {
+            currentColor = "Red";
+            currentIndex = itemIndex;
+        }
+
+
+        //Destroy after 
         Destroy(gameObject);
 
     }
